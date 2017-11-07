@@ -1,0 +1,8 @@
+Mostrarr por consola una variable:
+  console.log(variable)
+
+Sacar una ventana para recoger datos (esto es muy primitivo logicamente, pero para alguna prueba...):
+  var lastName = prompt('What is the last name?');
+
+Mostrar una alerta:
+  alert(message);

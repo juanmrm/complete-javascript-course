@@ -1,0 +1,31 @@
+Design and coding resources page: http://codingheroes.io/resources/
+
+1 - Cómo insertar coódigo Javascript en la pagina:
+  
+  1.1 Inline code (Mala Practica): directamente dentro de <script>...</script>
+  1.2 External file: <script src="script.js"></script>
+
+2 - Comentarios:
+  Linea: //
+  Multilinea: /* */
+
+3 - Variables and data types (notación CamelCase)
+
+    Sirven como contenedores de valores.
+    Tipos (ver primitives_data_types.png):
+      String
+      Number: siempre son en coma flotante, no como en Java 
+      Boolean: true / false 
+      Undefined: data type de una variable que no tiene todavia valor asignado.
+      Null: 
+
+4 - Type Coercion / Variable Mutation
+  Type Coercion: se llama asi a la conversión automatica entre tipos que realiza Javascript.
+  Variable Mutation: cambiamos de valor la variable y puede que tambien de tipo.
+
+5 - Operators: hay que tener en cuenta operator precedence y associativity
+  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
+
+  +, -, *,....
+
+  Usaremos () para agurpar operadores y cambiar su precedence.
