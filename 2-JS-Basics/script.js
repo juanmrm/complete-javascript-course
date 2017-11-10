@@ -156,3 +156,153 @@ if (scoreJohn > scoreMike && scoreJohn > scoreMary) {
   console.log('It\'s a draw.');
 }
 */
+
+
+///////////////////////////////////////////////////////////
+// LECTURE: Functions
+
+/*
+function calculateAge(yearOfBirth) {
+  var age = 2017 - yearOfBirth;
+  return age;
+}
+
+var ageJohn = calculateAge(1990);
+var ageMike = calculateAge(1969);
+var ageMary = calculateAge(1948);
+console.log(ageJohn);
+
+function yearsUntilRetirement(name, yearOfBirth) {
+  var age = calculateAge(yearOfBirth);
+  var retirement = 65 - age;
+  if (retirement >= 0) {
+    console.log(name + ' retires in '+ retirement + ' years.');
+  }
+  else {
+    console.log(name + ' is already retired.');
+  }
+}
+
+yearsUntilRetirement('John', 1990);
+yearsUntilRetirement('Mike', 1969);
+yearsUntilRetirement('Mary', 1948);
+*/
+
+///////////////////////////////////////////////////////////
+// LECTURE: Statements and expressions
+/*
+// Function Statements
+function someFunction(par) {
+  // code
+}
+
+// Function Expression
+var someFun = function (par) {
+  // code
+}
+
+// Expressions
+3 + 4;
+var x = 3;
+
+// Statements
+if (x === 5) {
+  // do something
+}
+*/
+
+///////////////////////////////////////////////////////////
+// LECTURE: Arrays
+/*
+var names = ['John', 'Jane', 'Mark'];
+var years = new Array(1990, 1969, 1948);
+console.log(names[1]);
+names[1] = 'Ben';
+console.log(names);
+
+var john = ['John', 'Smith', 1990, 'designer', false];
+
+john.push('blue');
+john.unshift('Mr.');
+john.pop();
+john.shift();
+console.log(john);
+
+if (john.indexOf('teacher') === -1){
+  console.log('John is not a teacher');
+}
+*/
+
+///////////////////////////////////////////////////////////
+// LECTURE: Objects
+/*
+var john = {
+  name: 'John',
+  lastName: 'Smith',
+  yearOfBirth: 1990,
+  job: 'teacher',
+  isMarried: false
+};
+
+console.log(john);
+console.log(john.lastName);
+console.log(john['lastName']);
+
+var job = 'job';
+console.log(john[job]);
+
+john.lastName = 'Miller';
+john['job'] = 'programmer';
+console.log(john);
+
+var jane = new Object();
+jane.name = 'Jane';
+jane.lastName = 'Smith';
+jane['yearOfBirth'] = 1969;
+jane.job = 'retired';
+jane['isMarried'] = true;
+console.log(jane);
+*/
+
+///////////////////////////////////////////////////////////
+// LECTURE: Objects and methods
+
+// v1.0
+/*
+var john = {
+  name: "John",
+  lastName: "Smith",
+  yearOfBirth: 1990,
+  job: "teacher",
+  isMarried: false,
+  family: ["Jane", "Mark", "Bob"],
+  calculateAge: function() {
+    // Es una function expression, es lo mismo que: var calculateAge = function(yearOfBirth) {...}
+    return 2017 - this.yearOfBirth;
+  }
+};
+
+console.log(john);
+console.log(john.family[2]); // Number 2 of family array
+console.log(john.calculateAge());
+
+var age = john.calculateAge();
+john.age = age;
+console.log(john);
+*/
+
+// v2.0
+var john = {
+  name: "John",
+  lastName: "Smith",
+  yearOfBirth: 1990,
+  job: "teacher",
+  isMarried: false,
+  family: ["Jane", "Mark", "Bob"],
+  calculateAge: function() {
+    this.age = 2017 - this.yearOfBirth;
+  }
+};
+
+john.calculateAge();
+console.log(john);

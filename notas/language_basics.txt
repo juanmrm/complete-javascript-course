@@ -48,3 +48,56 @@ Design and coding resources page: http://codingheroes.io/resources/
           break;
     }
 
+8 - Functions: evita duplicar codigo
+
+  function name(params) {
+    ....
+  }
+
+9 - Statements vs expressions
+  Los Statements realizan una accion / operacion sin producir un valor de output inmediato
+  Las expressions si que generan un valor inmediato de salida.
+
+    // Function Statements
+    function someFunction(par) {
+      // code
+    }
+
+    // Function Expression
+    var someFun = function (par) {
+      // code
+    }
+
+  10 - Arrays: colecciones de elementos (index is 0 based)
+    Definidos con [item1, ...., itemN] o new Array(item1, ...., itemN)
+    Metodos tipicos:
+      - push: añade un elemento al final de la lista
+      - unshift: añade un elemento al inicio de la lista
+      - pop: saca de la lista el ultimo elemento
+      - shift: saca de la lista el primer elemento
+      - indexOf: devuelve la posición del primer elemento coincidente con el parametro que le pasamos o -1 sino esta.
+
+  12 - Objects / properties / methods
+    Tenemos pares key-value denominados properties, y ademas no tenemos order definido, como si pasaba en las colecciones
+    var obj = {
+      key1: value1,
+      ...
+      keyN: valueN
+    }
+
+    Tambien lo podemos crear asi:
+      var obj = new Object();
+      obj.key1 = ....
+      obj['key2'] =....
+
+    Acceso a las propiedades:
+      obj.key o obj['key']
+
+    Methods: funciones contenidas en el objeto por ejemplo:
+      var obj = {
+        key1: value1
+        method1: function(params...) { // Son equivalentes a las function expressions
+          return this.key1.... // Keyword this, hace referencia (scope) al objeto actual
+        },
+        ...
+      }
