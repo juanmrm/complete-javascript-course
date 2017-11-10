@@ -29,3 +29,22 @@ Design and coding resources page: http://codingheroes.io/resources/
   +, -, *,....
 
   Usaremos () para agurpar operadores y cambiar su precedence.
+
+6 - Diferencia entre == vs === y != vs !==
+  == does type Coercion
+  === es estricto, aqui no hay conversion de tipos (Buena practica, evita bugs)
+
+7 - Operadores para control de flujo (toma de decisiones):
+
+  if / else if / else 
+
+  switch // Nos ahorramos un monton de if else / if else...
+    switch (key) {
+        case value:
+          ....        
+          break;
+        ....
+        default:
+          break;
+    }
+
