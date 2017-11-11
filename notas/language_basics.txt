@@ -76,6 +76,8 @@ Design and coding resources page: http://codingheroes.io/resources/
       - pop: saca de la lista el ultimo elemento
       - shift: saca de la lista el primer elemento
       - indexOf: devuelve la posición del primer elemento coincidente con el parametro que le pasamos o -1 sino esta.
+    Propiedades tipicas:
+      - length: numero de elementos del array.
 
   12 - Objects / properties / methods
     Tenemos pares key-value denominados properties, y ademas no tenemos order definido, como si pasaba en las colecciones
@@ -101,3 +103,16 @@ Design and coding resources page: http://codingheroes.io/resources/
         },
         ...
       }
+
+  13 - Loops and iteration
+
+    for (let index = 0; index < array.length; index++) {
+      ...
+    }    
+  
+    while (condition) {
+      ...
+    }
+
+    break: interrumpe el bucle actual y lo da por terminado.
+    continue: saltamos a la siguiente iteracion.

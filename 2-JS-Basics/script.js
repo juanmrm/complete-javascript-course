@@ -292,6 +292,7 @@ console.log(john);
 */
 
 // v2.0
+/*
 var john = {
   name: "John",
   lastName: "Smith",
@@ -306,3 +307,91 @@ var john = {
 
 john.calculateAge();
 console.log(john);
+*/
+
+///////////////////////////////////////////////////////////
+// LECTURE: Loops
+/*
+for (let i = 0; i < 10; i++) {
+  console.log(i);
+}
+*/
+
+/*
+0, true, print 0, update i to 1
+1, true, print 1, update i to 2
+.
+.
+9, true, print 9, update i to 10
+10, FALSE, end loop!
+*/
+
+//var names = ['John', 'Jane', 'Mary', 'Mark', 'Bob'];
+
+/*
+// for loops
+// Normal use case
+for (let i = 0; i < names.length; i++) {
+  console.log(names[i]);
+}
+
+// Reverse use case
+for (let i = names.length-1; i >= 0; i--) {
+  console.log(names[i]);
+}
+*/
+
+// while loops
+/*
+var i = 0;
+while(i < names.length) {
+  console.log(names[i]);
+  i++;
+}
+
+for (let i = 0; i <= 5; i++) { // Los numeros 4 y 5 no se mostrarian
+  console.log(i);
+  if (i === 3) {
+    break;
+  }
+}
+
+for (let i = 0; i <= 5; i++) { // Se pintarian todos los numeros salvo el 3.
+  if (i === 3) {
+    continue;
+  }
+  console.log(i);
+}
+*/
+
+///////////////////////////////////////////////////////////
+// LECTURE: Coding Challenge 2
+/*
+function age(yearOfBirth) {
+  return new Date().getFullYear() - yearOfBirth;
+}
+
+function isFullAge(age, i) {
+  if (age < 18) {
+    console.log('Person ' + (i+1) + ' IS NOT full age, has age ' + age); 
+    return false;  
+  } else {
+    console.log('Person ' + (i+1) + ' IS full age or older, has age ' + age); 
+    return true;
+  }
+}
+
+function printFullAge(birthYears) {
+  let fullAges = [];
+  for (let i = 0; i <birthYears.length; i++) {
+    fullAges.push(isFullAge(age(birthYears[i]), i));
+  }
+  return fullAges;
+}
+
+var full_1 = printFullAge([1970, 1980, 1990, 1999, 2000]);
+console.log(full_1);
+
+var full_2 = printFullAge([2001, 1985, 1994, 2014, 1973]);
+console.log(full_2);
+*/
