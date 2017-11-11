@@ -1,0 +1,13 @@
+1 - Execution Context (ver execution_context_1.png / execution_context_2.png):
+
+  Se trata del el entorno / contexto de ejecución donde se almancenan nuestras variables y se ejecuta nuestro codigo.
+
+2  - Execution Context in detail (ver )
+  Contiene 3 propiedades:
+    - Variable Object (VO): contiene los parametros pasados, declaracion de variables y de funciones.
+    - Scope Chain: contiene las VO actuales y las VO's de todos sus padres.
+    - "This" variable
+
+  Hoisting: variables y funciones estan disponibles durante la fase de ejecución.
+    Las funciones quedan totalmente definidas antes de que empiece la fase de ejecución.
+    Las variables se inicializan a undefined y se hace durante la fase de ejecución.
