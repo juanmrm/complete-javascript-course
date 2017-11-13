@@ -1,0 +1,21 @@
+1 - Math: clase con metodos que nos permite hacer bastantes operaciones:
+  random, floor... 
+
+2 - Acceso al DOM para manipularlo leer / escribir
+  2.1 - Seleccionar el elemento: 
+    document.querySelector(selector) // Pasaremos un selector como los de CSS #id, .class ...
+    document.getElementById(id) // Más rapido que querySelector si usamos Id's
+  
+  2.2 Leer / modificar contenido o incluso estilos
+    document.querySelector(selector).textContent 
+    document.querySelector(selector).innerHTML
+    document.querySelector(selector).style.cssProperty = value
+
+    document.querySelector('.class').classList.remove(clase); // Eliminar una clase de la lista de estilos del elemento
+    document.querySelector('.class').classList.add(clase); // Añadir una clase a la lista de estilos del elemento
+    document.querySelector('.class').classList.togle(clase); // Añade la clase sino existe en la lista o la borra si existe
+
+3 - Event Listeners:
+  https://developer.mozilla.org/en-US/docs/Web/Events
+
+  document.querySelector(selector).addEventListener(event_type, callback_function); // El callback suele ser una anonymous function
