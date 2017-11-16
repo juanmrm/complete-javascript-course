@@ -21,6 +21,8 @@ Design and coding resources page: http://codingheroes.io/resources/
 
 4 - Type Coercion / Variable Mutation
   Type Coercion: se llama asi a la conversión automatica entre tipos que realiza Javascript.
+    Undefined, 0, null or "" are COERCED to false
+
   Variable Mutation: cambiamos de valor la variable y puede que tambien de tipo.
 
 5 - Operators: hay que tener en cuenta operator precedence y associativity

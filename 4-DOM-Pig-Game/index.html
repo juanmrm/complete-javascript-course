@@ -12,9 +12,6 @@
     <body>
         <div class="wrapper clearfix">
 
-            <label for="win-score">Winning Score</label>
-            <input type="number" name="win-score" id="win-score">
-
             <div class="player-0-panel active">
                 <div class="player-name" id="name-0">Player 1</div>
                 <div class="player-score" id="score-0">43</div>
@@ -37,7 +34,10 @@
             <button class="btn-roll"><i class="ion-ios-loop"></i>Roll dice</button>
             <button class="btn-hold"><i class="ion-ios-download-outline"></i>Hold</button>
             
-            <img src="dice-5.png" alt="Dice" class="dice">
+            <input type="text" class="final-score" placeholder="Final score">
+
+            <img src="dice-5.png" alt="Dice" class="dice" id="dice-1">
+            <img src="dice-5.png" alt="Dice" class="dice" id="dice-2">
         </div>
         
         <script src="app.js"></script>
