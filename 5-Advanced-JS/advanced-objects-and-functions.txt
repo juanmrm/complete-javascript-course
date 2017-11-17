@@ -1,0 +1,16 @@
+// Consultar carpeta imagenes
+  * Everything is an object
+  * Inheritance
+  * Prototype and Prototype Chain
+
+1 - Operador new
+  p.e : var john = new Person('John', 1990, 'teacher')
+   
+   - Primero se crea un Empty Object
+   - Luego la funcion constructora es llamada pasandole los parametros.
+   - This no apunta al Global Object, sino que apunta al nuevo Empty Object recién creado.
+
+2 - Inheritance and Prototype
+  Pensando en herencia, añadiremos los methods (muy habitual) and properties (poco común) que querremos heredar a la propiedad prototype.
+  
+
