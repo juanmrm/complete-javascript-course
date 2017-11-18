@@ -13,4 +13,39 @@
 2 - Inheritance and Prototype
   Pensando en herencia, añadiremos los methods (muy habitual) and properties (poco común) que querremos heredar a la propiedad prototype.
   
+3 - Formas de crear objetos pensando siempre en herencia (ver script.js Function Constructor / Object Create):
+  3.1 - Usando la funcion constructora (uso más popular), el nuevo objeto creado hereda del prototype. 
+  3.2 - Object.create construye un objeto que hereda directamente del objecto que le estamos pasando como argumento.
+
+4 - Primitives vs Objects:
+    numbers, string, boolean, undefined and null son primitivas / el resto son objetos
+    
+    Las variables que contienen primitivas contienen el valor del dato dentro de la variable directamente.
+
+    Una variable te tipo objeto no contiene el valor de los datos directamente sino una referencia / puntero a Las variables que contiene el dato.
+
+5 - First Class Functions: Passing Functions as Arguments
+  Ver first-class-functions.png.
+
+  Vamos a pasar una funcion como argumento, es una callback function, porque va a ser llamada despues. 
+  Es un patron es realmente potente (ver ejemplos en script.js)
+
+6 - First Class Functions: Functions Returning Functions
+
+  Podemos devolver una función como valor de retorno de otra función.
+
+7 - Inmediately Invoked Function Expressions (IIFE)
+
+  Con este patrón, no estamos creando un trozo de código reutilizable, pero es muy útil cuando queremos crear 
+  un nuevo scope hidden del outside scope (data privacy)
+
+  p.e: Tenemos que hacer que el Parser de Javascript lo interprete como expresión en vez de declaracion.
+       Por eso lo metemos dentro de parentesis. Ademas para ejecutar la funcion añadimos ()
+
+      (function() {
+        var score = Math.random() * 10;
+        console.log(score >= 5);
+      })();
+
+
 
