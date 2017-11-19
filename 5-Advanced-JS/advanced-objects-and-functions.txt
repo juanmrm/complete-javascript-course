@@ -47,5 +47,30 @@
         console.log(score >= 5);
       })();
 
+8 - Closures (ver imagenes)
+
+  An inner function has always access to the variables and parameters of its outer function, even after the outer function
+  has returned.
+
+  Una function interna closes in => closures dentro de la funcion externa. La funcion interna tiene acceso al VO de la externa,
+  asi funciona el scope chain.
+
+9 - Bind, call and apply methods
+
+  call: Calls a method of an object, substituting another object for the current object (Borrow Method Tecnique)
+    p.e: john.presentation.call(emily, 'friendly', 'afternoon');
+
+  apply: Calls the function, substituting the specified object for the this value of the function, and the 
+         specified array for the arguments of the function.
+    p.e: john.presentation.apply(emily, ['friendly', 'afternoon']);
+
+  bind: For a given function, creates a bound function that has the same body as the original function. 
+        The this object of the bound function is associated with the specified object, and has the specified 
+        initial parameters.
+
+        Con bind podemos crear una copia de una función que nos sirve para preestablecer argumentos (Currying Tecnique)
+
+    p.e: var johnFriendly = john.presentation.bind(john, 'friendly');
+
 
 

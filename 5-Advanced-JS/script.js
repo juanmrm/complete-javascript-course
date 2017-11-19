@@ -162,8 +162,9 @@ designerQuestion('Jane');
 interviewQuestion('teacher')('Mark'); // Parece extraño, pero funciona porque es evaluado de izquierda a derecha.
 */
 
+/*
 //////////////////////////////////////////
-// Lecture: IIFE
+// Lecture: IIFE Inmediately Invoked Function Expression
 function game() {
   var score = Math.random() * 10;
   console.log(score >= 5);
@@ -180,4 +181,103 @@ game();
   var score = Math.random() * 10;
   console.log(score >= 5 - goodLuck);
 })(5);
+*/
+
+/*
+//////////////////////////////////////
+// Lecture: Closures
+function retirement(retirementAge) {
+  var a = ' years left until retirement.';
+  return function (yearOfBirth) {
+    var age = new Date().getFullYear() - yearOfBirth;
+    console.log((retirementAge - age) + a);
+  }
+}
+
+var retirementUS = retirement(66);
+var retirementGermany = retirement(65);
+var retirementIceland = retirement(67);
+
+retirementUS(1990); // Es lo mismo que retirement(66)(1990);
+retirementGermany(1990);
+retirementIceland(1990);
+
+function interviewQuestion(job) {
+  return function (name) { // Podemos usar el parametro job que esta outer de nuestra function por las closures
+    if (job === 'designer') {
+      console.log(name + ', can you please explain what UX design is?');
+    } else if (job === 'teacher') {
+      console.log('What subject do you teach, ' + name + '?');
+    } else {
+      console.log('Hello ' + name + ', what do you do?');
+    }
+  }
+}
+
+interviewQuestion('teacher')('John');
+*/
+
+
+///////////////////////////////////////
+// Lecture: Bind, call and apply
+var john = {
+  name: 'John',
+  age: 26,
+  job: 'teacher',
+  presentation: function (style, timeOfDay) {
+    if (style === 'formal') {
+      console.log('Good ' + timeOfDay + ', Ladies and gentlemen! I\'m a ' 
+                  + this.name + ', I\'m a ' + this.job + ' and I\'m ' + this.age + ' years old.');
+    } else if (style === 'friendly') {
+      console.log('Hey! What\'s up? I\'m a ' 
+      + this.name + ', I\'m a ' + this.job + ' and I\'m ' + this.age + ' years old. Have a nice ' +  timeOfDay + '.');
+    }
+  }
+}
+
+var emily = {
+  name: 'Emily',
+  age: 35,
+  job: 'designer'
+}
+
+john.presentation('formal', 'morning');
+john.presentation.call(emily, 'friendly', 'afternoon');
+// No va a funcionar porque en la funcion presentation no estamos esperando recibir un array de argumentos.
+//john.presentation.apply(emily, ['friendly', 'afternoon']);
+
+var johnFriendly = john.presentation.bind(john, 'friendly');
+johnFriendly('morning');
+johnFriendly('night');
+
+var emilyFormal = john.presentation.bind(emily, 'formal');
+emilyFormal('afternoon');
+
+
+
+var years = [1990, 1965, 1937, 2005, 1998];
+
+function arrayCalc(arr, fn) { // Le estamos pasando una funcion como argumento. Este patron es realmente potente
+  var arrRes = [];
+  for (let i = 0; i < arr.length; i++) { // Aplicamos la funcion a cada elemento del array.
+    arrRes.push(fn(arr[i]));
+  }
+  return arrRes;
+}
+
+function calculateAge(el) {
+  return new Date().getFullYear() - el;
+}
+
+function fullAge(limit, el) {
+  return el >= limit;
+}
+
+var ages = arrayCalc(years, calculateAge);
+// Estamos pasando una copia de la funcion fullAge pero con valores preestablecidos -> muy potente
+var fullJapan = arrayCalc(ages, fullAge.bind(this, 20)); 
+console.log(ages);
+console.log(fullJapan);
+
+
 
