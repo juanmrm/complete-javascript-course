@@ -20,6 +20,7 @@ var budgetController = (function () {
     this.value = value;
   };
 
+  // Data Store Model
   var data = {
     allItems: {
       exp: [],
@@ -58,9 +59,6 @@ var budgetController = (function () {
       return newItem;
     },
 
-    testing: function() {
-      console.log(data);
-    }
   };
 
 })(); // Invocamos a la funcion anonima creada
@@ -132,7 +130,7 @@ var controller = (function (budgetCtrl, UICtrl) {
     
     // Global event listener
     document.addEventListener('keypress', function(event){
-      if (event.keyCode === 13 || event.which === 13) { // Navegadores mas antiguos usan este which
+      if (event.keyCode === 13 || event.which === 13) { // Navegadores mas antiguos usan este which en vez de keyCode
         ctrlAddItem();  
       }
     });
