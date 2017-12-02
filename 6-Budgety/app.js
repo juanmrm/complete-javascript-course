@@ -26,7 +26,7 @@ var budgetController = (function () {
       sum += cur.value;
     });
     data.totals[type] = sum;
-  }
+  };
 
   // Data Store Model
   var data = {
@@ -40,7 +40,7 @@ var budgetController = (function () {
     },
     budget: 0,
     percentage: -1
-  }
+  };
 
   return {
     addItem: function(type, des, val) {
@@ -138,7 +138,7 @@ var UIController = (function() {
     expensesLabel: '.budget__expenses--value',
     percentageLabel: '.budget__expenses--percentage',
     container: '.container'
-  }
+  };
   
   return {
     getInput: function() {
@@ -230,9 +230,9 @@ var controller = (function (budgetCtrl, UICtrl) {
 
     // Using Event Delegatio (lo estamos poniendo en el contenedor padre de los incomes and expenses)
     document.querySelector(DOM.container).addEventListener('click', ctrlDeleteItem);
-  }
+  };
 
-  var updateBudget = function () {
+  var updateBudget = function() {
     // 1. Calculate the budget
     budgetCtrl.calculateBudget();
 
@@ -241,7 +241,19 @@ var controller = (function (budgetCtrl, UICtrl) {
 
     // 3. Display the budget on the UI
     UICtrl.displayBudget(budget);
-  }
+  };
+
+  var updatePercentages = function() {
+
+    // 1. Calculate percentages
+
+
+    // 2. Read percentages from the budget controller
+
+
+    // 3. Update the UI with the new percentages
+
+  };
 
   var ctrlAddItem = function() {
 
@@ -263,6 +275,9 @@ var controller = (function (budgetCtrl, UICtrl) {
     
         // 5. Calculate and update budget
         updateBudget();
+
+        // 6. Calculate and update percentages
+        updatePercentages();
     }
 
   };
@@ -287,6 +302,10 @@ var controller = (function (budgetCtrl, UICtrl) {
 
       // 3. Update and show the new budget
       updateBudget();
+
+      // 4. Calculate and update percentages
+      updatePercentages();
+              
     }
 
   };

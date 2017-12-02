@@ -1,4 +1,5 @@
-Recursos útiles: http://codingheroes.io/resources/
+Recursos muy útiles: 
+  http://codingheroes.io/resources/
 
   Eventos: https://developer.mozilla.org/en-US/docs/Web/Events
   KeyCodes: http://keycodes.atjayjo.com/
