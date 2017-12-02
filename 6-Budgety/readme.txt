@@ -19,3 +19,4 @@ Qué utilizamos en el projecto?
     - Add / Remove elements from DOM:
       insertAdjacentHTML: https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentHTML
   
+  - Use Event Delegation and DOM traversing

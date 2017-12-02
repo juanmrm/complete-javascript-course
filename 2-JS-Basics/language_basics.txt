@@ -50,7 +50,7 @@ Design and coding resources page: http://codingheroes.io/resources/
           break;
     }
 
-8 - Functions: evita duplicar codigo
+8 - Functions: evita duplicar codigo (DRY, Don't repeat yourself principle)
 
   function name(params) {
     ....
@@ -77,7 +77,10 @@ Design and coding resources page: http://codingheroes.io/resources/
       - unshift: añade un elemento al inicio de la lista
       - pop: saca de la lista el ultimo elemento
       - shift: saca de la lista el primer elemento
-      - indexOf: devuelve la posición del primer elemento coincidente con el parametro que le pasamos o -1 sino esta.
+      - indexOf: devuelve la posición del primer elemento coincidente con el parametro que le pasamos
+                 o -1 sino lo encuentra.
+      - map: para realizar una transformacion sobre cada elemento y devolver un nuevo array del tipo que indicamos.
+      - splice: para eliminar elementos del array, indicando start position y numero de elemenmtos.
     Propiedades tipicas:
       - length: numero de elementos del array.
 
