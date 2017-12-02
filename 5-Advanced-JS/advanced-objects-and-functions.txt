@@ -52,8 +52,8 @@
   An inner function has always access to the variables and parameters of its outer function, even after the outer function
   has returned.
 
-  Una function interna closes in => closures dentro de la funcion externa. La funcion interna tiene acceso al VO de la externa,
-  asi funciona el scope chain.
+  Una function interna se encierra (closes in), de aqui viene el termino "closure" dentro de la funcion externa. 
+  La funcion interna tiene acceso al VO de la externa, asi es como funciona el scope chain.
 
 9 - Bind, call and apply methods
 
