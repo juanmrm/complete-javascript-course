@@ -1,0 +1,20 @@
+ES2015 y ES6 se refieren a la misma versión de Javascript publicada en 2015.
+Se le llama también ES6 porque se ha lanzado después de la ES5 publicada en 2009.
+
+Actualmente no podemos utilizar ES6 en Producción, porque no está completamente soportada por los 
+Browsers. Es muy útil usar un Transpiler ES6 -> ES5.
+
+1 - Let and Const
+
+  let: equivale al antiguo var, valores que pueden mutar, cambiar
+  const: para constantes (variables inmutables), valores que no pueden cambiar
+
+  Diferencias: 
+    - var tiene scope function mientras que let y const tiene scope block (Fuction Scoped vs Block Scoped)
+    - una variable var se puede utilizar antes de ser declarada (hoisting), mientra que con let y const
+      no se puede hacer.
+
+2 - Blocks and IIFEs (Data privacy)
+
+  Ahora disponemos de una forma muy sencilla de crear IIFEs.
+  Para crear un bloque hacemos { codigo... }
