@@ -18,3 +18,30 @@ Browsers. Es muy útil usar un Transpiler ES6 -> ES5.
 
   Ahora disponemos de una forma muy sencilla de crear IIFEs.
   Para crear un bloque hacemos { codigo... }
+
+3 - Strings
+
+    - String Templates. Mas rápido y fácil de usar. Ponemos ` en lugar de " y marcamos los placeholders con ${...},
+        p.e: console.log(`He is ${calcAge(year)} years old`).
+
+    - New methods: 
+        startsWith: ver si empieza por...
+        endsWith: ver si termina en...
+        includes: ver si incluye...
+        repeat: repetir un string n veces
+
+4 -  Arrow Functions:
+
+    Para escribir menos codigo en tareas tipicas como iterar sobre un array y devolver un resultado.
+      - La mas simple con 1 solo argumento y 1 linea de codigo que lleva implicito el return
+         array.map(el => ...);
+      - Con mas argumentos, 2 por ejemplo
+         array.map((el, index) => ...);
+      - Con más argumentos y más de una linea de codigo
+         array.map((el, index) => { 
+           ...
+           return value;
+         });
+
+    p.e: ages6 = years.map((el, index) => `Age element ${index + 1}: ${new Date().getUTCFullYear() - el}.`);
+
