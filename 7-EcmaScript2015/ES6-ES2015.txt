@@ -45,3 +45,4 @@ Browsers. Es muy útil usar un Transpiler ES6 -> ES5.
 
     p.e: ages6 = years.map((el, index) => `Age element ${index + 1}: ${new Date().getUTCFullYear() - el}.`);
 
+    Lexical 'this' keyword: las arrow function comparten el this the la funcion que las envuelve.
