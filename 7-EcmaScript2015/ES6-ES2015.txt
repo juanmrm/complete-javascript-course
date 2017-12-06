@@ -84,3 +84,45 @@ Browsers. Es muy útil usar un Transpiler ES6 -> ES5.
 
   Cuando queremos que determinados argumentos de la funcion tengan valores por defecto.
     p.e:  function SmithPerson(firsName, yearOfBirth, lastName = 'Smith', nationality = 'american') {...}
+
+10 - Maps
+
+  Nueva estructura de datos key-value de ES6.
+  La creamos con const map = new Map();
+  Añadimos: map.set(key, value), donde key puede ser string, number, boolean...
+  Recuperar: map.get(key);
+  Tamaño: map.size
+  Elimiar: map.delete(key)
+  Comprobar si existe una clave: map.has(key)
+  Eliminar todos los elementos: map.clear()
+
+  Iteraremos con forEach o con forof loops
+
+  Por qué un Map es mejor estructura de datos que un Object?
+    - En un Map podemos utilizar cualquier cosa como key no solo Strings
+    - Ademas son Iterables
+    - Es muy sencillo obtener el tamaño
+    - Es muy facil añadir / eliminar elementos
+
+11 - Classes:
+
+  No añaden nada nuevo al lenguaje. Son sintactic sugar sobre la forma en la que hacemos 
+  herencia y prototipado en Javascript, pero es más sencillo de escribir.
+  Pero es exactamente lo mismo, lo que pasa es que nos facilitan la vida.
+
+  class Person {
+    constructor(...)
+
+    method1() {...}
+  }
+
+  Podemos añadir static methods: son metodos que están vinculados a la clase, no a la instancia de la clase.
+
+  2 Consideraciones importantes:
+    - Class definitions are not hoisted
+    - Solo podemos añadir metodos a las clases, no propiedades.
+
+12 - Classes with Subclasses:
+
+  En ES5: Athlete5.prototype = Object.create(Person5.prototype); // Person5 es la clase padre de Athlete5 que es la subclase.
+  En ES6: class Athlete6 extends Person5 y en el constructor usaremos super(...)

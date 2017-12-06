@@ -16,6 +16,7 @@
 3 - Formas de crear objetos pensando siempre en herencia (ver script.js Function Constructor / Object Create):
   3.1 - Usando la funcion constructora (uso más popular), el nuevo objeto creado hereda del prototype. 
   3.2 - Object.create construye un objeto que hereda directamente del objecto que le estamos pasando como argumento.
+    p.e: Athlete5.prototype = Object.create(Person5.prototype); // Person5 es la clase padre de Athlete5 que es la subclase.
 
 4 - Primitives vs Objects:
     numbers, string, boolean, undefined and null son primitivas / el resto son objetos
