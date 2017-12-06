@@ -68,9 +68,19 @@ Browsers. Es muy útil usar un Transpiler ES6 -> ES5.
 
     Para buscar elementos: findIndex, find
 
-7 - Spread operator
+7 - Spread operator: used in function call
   Un manera muy conveniente de expandir los elementos de un array o lista en sitios como argumentos
   o llamadas a funciones.
     p.e: en ES5: var sum2 = addFourAges.apply(null, ages); // Llama a la funcion pasandole el array como argumento
          en ES6: const sum3 = addFourAges(...ages);
                  const bigFamily = [...familySmith, 'Lily', ...familyMiller];
+
+8 - Rest Parameters in Functions: used in function declaration
+
+  Nos permiten pasar un numero arbitrario de parametros a una funcion y utilizar estos argumentos en la funcion
+   function isFullAge6(limit, ...years) {...}
+
+9 - Default Parameters
+
+  Cuando queremos que determinados argumentos de la funcion tengan valores por defecto.
+    p.e:  function SmithPerson(firsName, yearOfBirth, lastName = 'Smith', nationality = 'american') {...}

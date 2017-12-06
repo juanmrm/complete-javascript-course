@@ -287,7 +287,7 @@ console.log(ages.find(cur => cur >= 18));
 
 /////////////////////////////////////////////////
 // LECTURE: Spread Operator
-
+/*
 function addFourAges(a, b, c, d) {
   return a + b + c + d;
 }
@@ -314,3 +314,73 @@ const boxes = document.querySelectorAll('.box');
 // Cambiar el color del texto de todos estos elementos
 const allNodes = [h, ...boxes];
 Array.from(allNodes).forEach(cur => cur.style.color = 'purple');
+*/
+
+/////////////////////////////////////////////////
+// LECTURE: Rest parameters
+/*
+// ES5
+function isFullAge5() {
+  console.log(arguments); // Variable especial a la que tenemos acceso en todas las funciones.
+  var argsArr = Array.prototype.slice.call(arguments); // Transformamos a array.
+  argsArr.forEach(function(cur) {
+    console.log((2016 - cur) >= 18);
+  })
+}
+// isFullAge5(1990, 1999, 1968);
+// isFullAge5(1990, 1999, 1968, 2016, 1987);
+
+// ES6
+function isFullAge6(...years) { // Transforma los argumentos en un array
+  years.forEach(cur => console.log((2016 - cur) >= 18));
+}
+isFullAge6(1990, 1999, 1968, 2016, 1987);
+*/
+/*
+// ES5
+function isFullAge5(limit) {
+  var argsArr = Array.prototype.slice.call(arguments, 1); // Transformamos a array, excluyendo el primer argumento
+  argsArr.forEach(function(cur) {
+    console.log((2016 - cur) >= limit);
+  })
+}
+//isFullAge5(16, 1990, 1999, 1968);
+
+// ES6
+function isFullAge6(limit, ...years) { // Transforma los argumentos en un array
+  years.forEach(cur => console.log((2016 - cur) >= limit));
+}
+isFullAge6(16, 1990, 1999, 1968, 2016, 1987);
+*/
+
+
+/////////////////////////////////////////////////
+// LECTURE: Default parameters
+
+// ES5
+/*
+function SmithPerson(firsName, yearOfBirth, lastName, nationality) {
+
+  lastName = lastName === undefined ? 'Smith' : lastName;
+  nationality = nationality === undefined ? 'american' : nationality;
+
+  this.firsName = firsName;
+  this.lastName = lastName;
+  this.yearOfBirth = yearOfBirth;
+  this.nationality = nationality;
+}
+
+var john = new SmithPerson('John', 1990); // LLamamos con 2 argumentos y asignara a undefined el resto de parametros
+var emily = new SmithPerson('Emily', 1983, 'Diaz', 'spanish');
+*/
+
+// ES6
+function SmithPerson(firsName, yearOfBirth, lastName = 'Smith', nationality = 'american') {
+  this.firsName = firsName;
+  this.lastName = lastName;
+  this.yearOfBirth = yearOfBirth;
+  this.nationality = nationality;
+}
+
+var john = new SmithPerson('John', 1990); // LLamamos con 2 argumentos y asignara a undefined el resto de parametros
+var emily = new SmithPerson('Emily', 1983, 'Diaz', 'spanish');
