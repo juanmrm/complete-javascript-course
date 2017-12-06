@@ -3,7 +3,10 @@
 
 2 - Acceso al DOM para manipularlo leer / escribir
   2.1 - Seleccionar el elemento: 
-    document.querySelector(selector) // Pasaremos un selector como los de CSS #id, .class ...
+    document.querySelector(selector) // Pasaremos un selector (igual que en CSS) que puede ser:
+                                          - nombre del tag html
+                                          - id del elemento #id
+                                          - clase del elemento .class
     document.getElementById(id) // Más rapido que querySelector si usamos Id's
   
   2.2 Leer / modificar contenido o incluso estilos

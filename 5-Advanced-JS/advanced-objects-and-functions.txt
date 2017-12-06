@@ -61,7 +61,7 @@
     p.e: john.presentation.call(emily, 'friendly', 'afternoon');
 
   apply: Calls the function, substituting the specified object for the this value of the function, and the 
-         specified array for the arguments of the function.
+         specified array as the arguments of the function.
     p.e: john.presentation.apply(emily, ['friendly', 'afternoon']);
 
   bind: For a given function, creates a bound function that has the same body as the original function. 
