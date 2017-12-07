@@ -16,25 +16,32 @@ class Park extends Place {
   constructor(name, buildYear, trees, area) {
     super(name, buildYear);
     this.trees = trees;
-    this.area = area;
+    this.area = area; // km2
   }
 
   treeDensity() {
-    console.log(`${this.name} has a tree densisty of ${(this.trees / this.area).toFixed(2)} trees per square km`);
+    const density = (this.trees / this.area).toFixed(2);
+    console.log(`${this.name} has a tree densisty of ${density} trees per square km.`);
   }
 
 }
 
 class Street extends Place {
 
-  constructor(name, buildYear, length, size = 'normal') {
+  constructor(name, buildYear, length, size = 3) {
     super(name, buildYear);
     this.length = length;
     this.size = size;
   }
 
-  sizeClassification() {
-    console.log(`${this.name}, built in ${this.buildYear} is a ${this.size} street.`);
+  classifyStreet() {
+    const classification = new Map();
+    classification.set(1, 'tiny');
+    classification.set(2, 'small');
+    classification.set(3, 'normal');
+    classification.set(4, 'big');
+    classification.set(5, 'huge');
+    console.log(`${this.name}, built in ${this.buildYear} is a ${classification.get(this.size)} street.`);
   }
 
 }
@@ -44,29 +51,47 @@ const places = {
   streets: []
 };
 
-places.parks.push(new Park('Green Park', 1972, 570, 3));
-places.parks.push(new Park('National Park', 1850, 3000, 6));
-places.parks.push(new Park('Oak Park', 1780, 2500, 5));
+places.parks.push(new Park('Green Park', 1987, 215, 0.2));
+places.parks.push(new Park('National Park', 1894, 3541, 2.9));
+places.parks.push(new Park('Oak Park', 1953, 949, 0.4));
 
-places.streets.push(new Street('Ocean Avenue', 1999, 6, 'big'));
-places.streets.push(new Street('Evergreen Street', 2008, 2, 'small'));
-places.streets.push(new Street('4th Street', 2015, 4));
-places.streets.push(new Street('Sunset Boulevard', 1982, 10, 'huge'));
+places.streets.push(new Street('Ocean Avenue', 1999, 1.1, 4));
+places.streets.push(new Street('Evergreen Street', 2008, 2.7, 2));
+places.streets.push(new Street('4th Street', 2015, 0.8));
+places.streets.push(new Street('Sunset Boulevard', 1982, 2.5, 5));
 
-console.log('---------- PARKS REPORT ----------');
-const totalAge = places.parks
-  .map(el => el.calcAge())
-  .reduce((preValue, curValue) => preValue + curValue);
-console.log(`Our ${places.parks.length} parks have and average age of ` +
-            `${(totalAge / places.parks.length).toFixed(2)} years`);
-places.parks.forEach(el => el.treeDensity());
-const parkMoreThan1000 = places.parks.find(el => el.trees > 1000);
-console.log(`${parkMoreThan1000.name} has more than 1000 trees`);
+function calcTotAndAvg(arr) {
+  const sum = arr.reduce((prev, cur, index) => prev + cur, 0);
+  return [sum.toFixed(2), (sum / arr.length).toFixed(2)];  
+}
 
-console.log('---------- STREETS REPORT ----------');
-const totalLength = places.streets
-  .map(el => el.length)
-  .reduce((preValue, curValue) => preValue + curValue);
-console.log(`Our ${places.streets.length} streets have a total length of ${totalLength} km, ` +
-            `with an average age of ${(totalLength / places.streets.length).toFixed(2)} km`);
-places.streets.forEach(el => el.sizeClassification());
+function reportParks(p) {
+  console.log('---------- PARKS REPORT ----------');
+  
+  // Density
+  p.forEach(el => el.treeDensity());
+
+  // Average age
+  const ages = p.map(el => el.calcAge());
+  const [totalAge, avgAge] = calcTotAndAvg(ages); // Destructuring
+  console.log(`Our ${p.length} parks have an average age of ${avgAge} years`);
+
+  // Which park has more than 1000 trees
+  const i = p.findIndex(el => el.trees >= 1000);
+  console.log(`${p[i].name} has more than 1000 trees`);
+}
+
+function reportStreets(s) {
+  console.log('---------- STREETS REPORT ----------');
+  
+  // Total and average length of the town's streets
+  const lengths = s.map(el => el.length);
+  const [totalLength, avgLength] = calcTotAndAvg(lengths);
+  console.log(`Our ${s.length} streets have a total length of ${totalLength} km, with an average of ${avgLength} km.`);
+  
+  // Classify sizes
+  s.forEach(el => el.classifyStreet());    
+}
+
+reportParks(places.parks);
+reportStreets(places.streets);
