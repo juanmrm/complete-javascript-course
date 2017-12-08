@@ -12,7 +12,7 @@
 
   Hoisting: variables y funciones estan disponibles durante la fase de ejecución.
     Las funciones quedan totalmente definidas antes de que empiece la fase de ejecución (functions declarations)
-    Las variables se inicializan a undefined y se hace durante la fase de ejecución.
+    Las variables se inicializan a undefined.
 
     IMPORTANTE: las functions expressions no se van a almancenar durante la fase de creacion por lo que si hacemos esto dara error:
       
