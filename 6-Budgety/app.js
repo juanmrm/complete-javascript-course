@@ -232,14 +232,13 @@ var UIController = (function() {
     deleteListItem: function(selectorID) {
       var el = document.getElementById(selectorID);
       el.parentNode.removeChild(el);
-
     },
 
     clearFields: function() {
       var fields, fieldsArray;
       fields = document.querySelectorAll(DOMstrings.inputDescription + ',' + DOMstrings.inputValue);
       // Convertimos esta Lista a Array con este 'truco'
-      fieldsArray = Array.from(fields); // Tb vale Array.prototype.slice.call(fields); 
+      fieldsArray = Array.prototype.slice.call(fields); // En ES6 seria Array.from(fields);
       fieldsArray.forEach(function(current, index, array) {
         current.value = '';
       });
@@ -332,7 +331,7 @@ var controller = (function (budgetCtrl, UICtrl) {
       }
     });
 
-    // Using Event Delegatio (lo estamos poniendo en el contenedor padre de los incomes and expenses)
+    // Using Event Delegation (lo estamos poniendo en el contenedor padre de los incomes and expenses)
     document.querySelector(DOM.container).addEventListener('click', ctrlDeleteItem);
 
     document.querySelector(DOM.inputType).addEventListener('change', UICtrl.changedType);

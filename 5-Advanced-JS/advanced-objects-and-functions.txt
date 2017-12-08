@@ -1,4 +1,4 @@
-// Consultar carpeta imagenes
+// Consultar carpeta imágenes
   * Everything is an object
   * Inheritance
   * Prototype and Prototype Chain
@@ -15,20 +15,20 @@
   
 3 - Formas de crear objetos pensando siempre en herencia (ver script.js Function Constructor / Object Create):
   3.1 - Usando la funcion constructora (uso más popular), el nuevo objeto creado hereda del prototype. 
-  3.2 - Object.create construye un objeto que hereda directamente del objecto que le estamos pasando como argumento.
+  3.2 - Object.create construye un objeto que hereda directamente del objeto que le estamos pasando como argumento.
     p.e: Athlete5.prototype = Object.create(Person5.prototype); // Person5 es la clase padre de Athlete5 que es la subclase.
 
 4 - Primitives vs Objects:
-    numbers, string, boolean, undefined and null son primitivas / el resto son objetos
+    numbers, string, boolean, undefined and null son primitivas / el resto son objetos (ver everything-is-an-object.png)
     
     Las variables que contienen primitivas contienen el valor del dato dentro de la variable directamente.
 
-    Una variable te tipo objeto no contiene el valor de los datos directamente sino una referencia / puntero a Las variables que contiene el dato.
+    Una variable te tipo objeto no contiene el valor de los datos directamente sino una referencia / puntero a las posiciones en memoria de las variables que contiene el dato.
 
 5 - First Class Functions: Passing Functions as Arguments
   Ver first-class-functions.png.
 
-  Vamos a pasar una funcion como argumento, es una callback function, porque va a ser llamada despues. 
+  Vamos a pasar una funcion como argumento, es una callback function, porque va a ser llamada después. 
   Es un patron es realmente potente (ver ejemplos en script.js)
 
 6 - First Class Functions: Functions Returning Functions
@@ -38,17 +38,17 @@
 7 - Inmediately Invoked Function Expressions (IIFE)
 
   Con este patrón, no estamos creando un trozo de código reutilizable, pero es muy útil cuando queremos crear 
-  un nuevo scope hidden del outside scope (data privacy)
+  un nuevo scope hidden from the outside scope (data privacy)
 
   p.e: Tenemos que hacer que el Parser de Javascript lo interprete como expresión en vez de declaracion.
-       Por eso lo metemos dentro de parentesis. Ademas para ejecutar la funcion añadimos ()
+       Por eso lo metemos dentro de parentesis. Ademas para ejecutar la funcion inmediatamente añadimos ()
 
       (function() {
         var score = Math.random() * 10;
         console.log(score >= 5);
       })();
 
-8 - Closures (ver imagenes)
+8 - Closures (closures.png, how-closures-work.png)
 
   An inner function has always access to the variables and parameters of its outer function, even after the outer function
   has returned.
@@ -56,9 +56,9 @@
   Una function interna se encierra (closes in), de aqui viene el termino "closure" dentro de la funcion externa. 
   La funcion interna tiene acceso al VO de la externa, asi es como funciona el scope chain.
 
-9 - Bind, call and apply methods
+9 - call / apply / bind methods
 
-  call: Calls a method of an object, substituting another object for the current object (Borrow Method Tecnique)
+  call: Calls a method of an object, substituting another object for the current object (Borrow Method Technique)
     p.e: john.presentation.call(emily, 'friendly', 'afternoon');
 
   apply: Calls the function, substituting the specified object for the this value of the function, and the 
@@ -69,9 +69,9 @@
         The this object of the bound function is associated with the specified object, and has the specified 
         initial parameters.
 
-        Con bind podemos crear una copia de una función que nos sirve para preestablecer argumentos (Currying Tecnique)
+        Con bind podemos crear una copia de una función que nos sirve para preestablecer argumentos (Currying Technique)
 
-    p.e: var johnFriendly = john.presentation.bind(john, 'friendly');
+    p.e: var johnFriendly = john.presentation.bind(emily, 'friendly');
 
 
 

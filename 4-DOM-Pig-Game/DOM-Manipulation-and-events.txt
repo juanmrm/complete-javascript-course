@@ -1,15 +1,21 @@
-1 - Math: clase con metodos que nos permite hacer bastantes operaciones:
-  random, floor... 
+¿Qué utilizamos en este mini-proyecto?
+  DOM.png
+  DOM_Manipulation.png
+  what_is_an_event.png
+  how_events_are_processed.png
 
-2 - Acceso al DOM para manipularlo leer / escribir
+1 - Math: clase con metodos que nos permite hacer bastantes operaciones:
+  random, floor, round... 
+
+2 - Acceso al DOM para su manipulación (leer / escribir)
   2.1 - Seleccionar el elemento: 
     document.querySelector(selector) // Pasaremos un selector (igual que en CSS) que puede ser:
                                           - nombre del tag html
                                           - id del elemento #id
                                           - clase del elemento .class
-    document.getElementById(id) // Más rapido que querySelector si usamos Id's
+    document.getElementById(id) // Más rapido que querySelector si usamos Id
   
-  2.2 Leer / modificar contenido o incluso estilos
+  2.2 Leer / modificar contenido, estilos...
     document.querySelector(selector).textContent 
     document.querySelector(selector).innerHTML
     document.querySelector(selector).style.cssProperty = value
@@ -19,6 +25,6 @@
     document.querySelector('.class').classList.togle(clase); // Añade la clase sino existe en la lista o la borra si existe
 
 3 - Event Listeners:
-  https://developer.mozilla.org/en-US/docs/Web/Events
+  Lista muy completa de eventos: https://developer.mozilla.org/en-US/docs/Web/Events
 
   document.querySelector(selector).addEventListener(event_type, callback_function); // El callback suele ser una anonymous function

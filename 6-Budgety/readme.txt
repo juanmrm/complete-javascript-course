@@ -1,4 +1,4 @@
-Recursos muy útiles: 
+Recursos muy útiles:
   http://codingheroes.io/resources/
 
   Eventos: https://developer.mozilla.org/en-US/docs/Web/Events
@@ -10,7 +10,7 @@ Qué utilizamos en el projecto?
   - Module Pattern: Basado en IIFE (data privacy -> new scope) y Closures.
     3 modulos: budgetController, UIController, controller
 
-  - Concepto de Funcion Inicializadora: es la unica instruccion de codigo que se está ejecutando desde fuera de los modules.
+  - Concepto de Init Function (función inicializadora): es la única instrucción de código que se está ejecutando desde fuera de los modules.
 
   - Function Constructors
 
@@ -22,7 +22,7 @@ Qué utilizamos en el projecto?
   
   - Use Event Delegation and DOM traversing
 
-  - DRY: Don't repeat yourself principle
+  - DRY principle: Don't repeat yourself principle
 
   - SOLID principle: https://es.wikipedia.org/wiki/SOLID
 

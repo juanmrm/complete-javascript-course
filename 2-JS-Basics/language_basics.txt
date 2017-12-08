@@ -1,6 +1,6 @@
 Design and coding resources page: http://codingheroes.io/resources/
 
-1 - Cómo insertar coódigo Javascript en la pagina:
+1 - Cómo insertar código Javascript en la pagina:
   
   1.1 Inline code (Mala Practica): directamente dentro de <script>...</script>
   1.2 External file: <script src="script.js"></script>
@@ -13,14 +13,14 @@ Design and coding resources page: http://codingheroes.io/resources/
 
     Sirven como contenedores de valores.
     Tipos (ver primitives_data_types.png):
-      String
+      String: una secuencia de caracteres
       Number: siempre son en coma flotante, no como en Java 
       Boolean: true / false 
       Undefined: data type de una variable que no tiene todavia valor asignado.
       Null: 
 
 4 - Type Coercion / Variable Mutation
-  Type Coercion: se llama asi a la conversión automatica entre tipos que realiza Javascript.
+  Type Coercion: se llama asi a la conversión automatica de tipos que realiza Javascript.
     Undefined, 0, null or "" are COERCED to false
 
   Variable Mutation: cambiamos de valor la variable y puede que tambien de tipo.
@@ -70,7 +70,7 @@ Design and coding resources page: http://codingheroes.io/resources/
       // code
     }
 
-  10 - Arrays: colecciones de elementos (index is 0 based)
+  10 - Arrays: colecciones de elementos (0 based index)
     Definidos con [item1, ...., itemN] o new Array(item1, ...., itemN)
     Metodos tipicos:
       - push: añade un elemento al final de la lista
@@ -85,7 +85,7 @@ Design and coding resources page: http://codingheroes.io/resources/
       - length: numero de elementos del array.
 
   12 - Objects / properties / methods
-    Tenemos pares key-value denominados properties, y ademas no tenemos order definido, como si pasaba en las colecciones
+    Tenemos pares key-value denominados properties, y ademas no tenemos orden definido, como si pasaba en las colecciones (arrays)
     var obj = {
       key1: value1,
       ...
@@ -127,9 +127,3 @@ Design and coding resources page: http://codingheroes.io/resources/
       array.forEach(function(current, index, array) {
         ...
       }
-
-      
-
-    
-
-    

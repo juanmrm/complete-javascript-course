@@ -1,13 +1,14 @@
-1 - Execution Context (ver execution_context_1.png / execution_context_2.png):
-
-  Se trata del el entorno / contexto de ejecución donde se almancenan nuestras variables y se ejecuta nuestro codigo.
+1 - Execution Context.
+  Se trata del entorno / contexto de ejecución donde se almancenan nuestras variables y donde se ejecuta nuestro codigo.
+  Global -> execution_context_global.png.
 
      (CREATION FASE - STEP 1)
-2  - Execution Context in detail (ver imagenes) 
+2  - Execution Context in detail (execution_context_in_detail.png, execution_context_VO_creation_phase.png)
+  
   Contiene 3 propiedades:
     - Variable Object (VO): contiene los parametros pasados, declaracion de variables y de funciones (functions declarations).
     - Scope Chain: contiene las VO actuales y las VO's de todos sus padres.
-    - "This" variable
+    - Determinar el valor de la variable "this".
 
   Hoisting: variables y funciones estan disponibles durante la fase de ejecución.
     Las funciones quedan totalmente definidas antes de que empiece la fase de ejecución (functions declarations)
@@ -22,9 +23,9 @@
       }
 
     (CREATION FASE - STEP 2)
-3 - Scoping Chain (ver imagenes)
+3 - Scoping Chain (scoping_scope_chain.png, scope_chain-vs-execution_stack.png, scope-chain-example.png)
 
-    En Javascript la unica forma de crear un nuevo scope, es definir una nueva funcion. 
+    En Javascript la unica forma de crear un nuevo contexto (scope), es definir una nueva funcion. 
     En otro lenguajes de programación se crean nuevos scopes con los if/else for/while...en Javascript no.
 
     (CREATION FASE - STEP 3)
@@ -32,5 +33,5 @@
 
     Regular funtion call: this apunta al Global Object (the window object, in the browser)
     
-    Method call: this apunta al object que esta llamando al metodo
+    Method call: this apunta al object sobre el que se esta invocando el metodo
     (function attached to an object)

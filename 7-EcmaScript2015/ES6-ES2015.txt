@@ -2,17 +2,16 @@ ES2015 y ES6 se refieren a la misma versión de Javascript publicada en 2015.
 Se le llama también ES6 porque se ha lanzado después de la ES5 publicada en 2009.
 
 Actualmente no podemos utilizar ES6 en Producción, porque no está completamente soportada por los 
-Browsers. Es muy útil usar un Transpiler ES6 -> ES5.
+Browsers. Es muy útil usar un Transpiler ES6 -> ES5 como Babel.
 
 1 - Let and Const
 
-  let: equivale al antiguo var, valores que pueden mutar, cambiar
-  const: para constantes (variables inmutables), valores que no pueden cambiar
+  let: equivale al antiguo var, valores que pueden mutar, cambiar.
+  const: para constantes (variables inmutables), valores que no pueden cambiar.
 
   Diferencias: 
-    - var tiene scope function mientras que let y const tiene scope block (Fuction Scoped vs Block Scoped)
-    - una variable var se puede utilizar antes de ser declarada (hoisting), mientra que con let y const
-      no se puede hacer.
+    - var tiene scope function mientras que let y const tiene scope block (Function Scoped vs Block Scoped)
+    - una variable var se puede utilizar antes de ser declarada (hoisting), no vale con let y const.
 
 2 - Blocks and IIFEs (Data privacy)
 
@@ -21,7 +20,7 @@ Browsers. Es muy útil usar un Transpiler ES6 -> ES5.
 
 3 - Strings
 
-    - String Templates. Mas rápido y fácil de usar. Ponemos ` en lugar de " y marcamos los placeholders con ${...},
+    - String Templates. Mas rápido y fácil de usar. Ponemos ` en lugar de " o ' y marcamos los placeholders con ${...},
         p.e: console.log(`He is ${calcAge(year)} years old`).
 
     - New methods: 
@@ -33,7 +32,7 @@ Browsers. Es muy útil usar un Transpiler ES6 -> ES5.
 4 -  Arrow Functions
 
     Para escribir menos codigo en tareas tipicas como iterar sobre un array y devolver un resultado.
-      - La mas simple con 1 solo argumento y 1 linea de codigo que lleva implicito el return
+      - La mas simple con 1 solo argumento y 1 linea de codigo que lleva implícito el return
          array.map(el => ...);
       - Con mas argumentos, 2 por ejemplo
          array.map((el, index) => ...);
@@ -62,23 +61,24 @@ Browsers. Es muy útil usar un Transpiler ES6 -> ES5.
       ES6: const boxesArray6 = Array.from(boxes);
 
     Bucles: el problema con forEach y map es que no podemos usar break o continue keyword.
-      En ES5 tendriamos que utilizar un for loop tipico. 
+      En ES5 tendriamos que utilizar un for loop tradicional. 
       En ES6 usaremos un forof loop
         for (const cur of object) {...}
 
-    Para buscar elementos: findIndex, find
+    Para buscar elementos: 
+      - findIndex
+      - find
 
 7 - Spread operator: used in function call
-  Un manera muy conveniente de expandir los elementos de un array o lista en sitios como argumentos
-  o llamadas a funciones.
-    p.e: en ES5: var sum2 = addFourAges.apply(null, ages); // Llama a la funcion pasandole el array como argumento
-         en ES6: const sum3 = addFourAges(...ages);
+  Un manera muy conveniente de expandir los elementos de un array o lista en sitios como argumentos o llamadas a funciones.
+    p.e: en ES5: var sum = addFourAges.apply(null, ages); // Llama a la funcion pasandole el array como argumento
+         en ES6: const sum = addFourAges(...ages);
                  const bigFamily = [...familySmith, 'Lily', ...familyMiller];
 
 8 - Rest Parameters in Functions: used in function declaration
 
   Nos permiten pasar un numero arbitrario de parametros a una funcion y utilizar estos argumentos en la funcion
-   function isFullAge6(limit, ...years) {...}
+   p.e: function isFullAge6(limit, ...years) {...}
 
 9 - Default Parameters
 
@@ -100,15 +100,14 @@ Browsers. Es muy útil usar un Transpiler ES6 -> ES5.
 
   Por qué un Map es mejor estructura de datos que un Object?
     - En un Map podemos utilizar cualquier cosa como key no solo Strings
-    - Ademas son Iterables
-    - Es muy sencillo obtener el tamaño
-    - Es muy facil añadir / eliminar elementos
+    - Son Iterables
+    - Muy sencillo obtener el tamaño
+    - Muy facil añadir / eliminar elementos
 
 11 - Classes:
 
-  No añaden nada nuevo al lenguaje. Son sintactic sugar sobre la forma en la que hacemos 
-  herencia y prototipado en Javascript, pero es más sencillo de escribir.
-  Pero es exactamente lo mismo, lo que pasa es que nos facilitan la vida.
+  No añaden nada nuevo al lenguaje. Son sintactic sugar sobre la forma en la que hacemos herencia y prototipado,
+  en Javascript, pero es más sencillo de escribir.
 
   class Person {
     constructor(...)
@@ -121,11 +120,12 @@ Browsers. Es muy útil usar un Transpiler ES6 -> ES5.
   2 Consideraciones importantes:
     - Class definitions are not hoisted
     - Solo podemos añadir metodos a las clases, no propiedades.
+    (Prototypes having data properties is generally considered an anti-pattern, so this just enforces a best practice.)
 
 12 - Classes with Subclasses:
 
   En ES5: Athlete5.prototype = Object.create(Person5.prototype); // Person5 es la clase padre de Athlete5 que es la subclase.
-  En ES6: class Athlete6 extends Person5 y en el constructor usaremos super(...)
+  En ES6: class Athlete6 extends Person6 y en el constructor usaremos super(...)
 
 13 - How to use ES2015 / ES6 Today
 
