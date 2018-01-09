@@ -511,7 +511,7 @@ class Person6 {
   
 }
 
-class Athlete6 extends Person5 {
+class Athlete6 extends Person6 {
  
   constructor(name, yearOfBirth, job, olympicGames, medals) {
     super(name, yearOfBirth, job);

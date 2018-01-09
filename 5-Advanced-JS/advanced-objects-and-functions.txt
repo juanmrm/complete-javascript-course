@@ -25,17 +25,13 @@
 
     Una variable te tipo objeto no contiene el valor de los datos directamente sino una referencia / puntero a las posiciones en memoria de las variables que contiene el dato.
 
-5 - First Class Functions: Passing Functions as Arguments
-  Ver first-class-functions.png.
+5 - First Class Functions: Ver first-class-functions.png.
+  - Passing Functions as Arguments: vamos a pasar una funcion como argumento, es una callback function, porque va a ser llamada después. 
+  - Functions Returning Functions: podemos devolver una función como valor de retorno de otra función.
+  
+    Son herramientas realmente potentes (ver ejemplos en script.js)
 
-  Vamos a pasar una funcion como argumento, es una callback function, porque va a ser llamada después. 
-  Es un patron es realmente potente (ver ejemplos en script.js)
-
-6 - First Class Functions: Functions Returning Functions
-
-  Podemos devolver una función como valor de retorno de otra función.
-
-7 - Inmediately Invoked Function Expressions (IIFE)
+6 - Inmediately Invoked Function Expressions (IIFE)
 
   Con este patrón, no estamos creando un trozo de código reutilizable, pero es muy útil cuando queremos crear 
   un nuevo scope hidden from the outside scope (data privacy)
@@ -48,7 +44,7 @@
         console.log(score >= 5);
       })();
 
-8 - Closures (closures.png, how-closures-work.png)
+7 - Closures (closures.png, how-closures-work.png)
 
   An inner function has always access to the variables and parameters of its outer function, even after the outer function
   has returned.
@@ -56,9 +52,9 @@
   Una function interna se encierra (closes in), de aqui viene el termino "closure" dentro de la funcion externa. 
   La funcion interna tiene acceso al VO de la externa, asi es como funciona el scope chain.
 
-9 - call / apply / bind methods
+8 - call / apply / bind methods
 
-  call: Calls a method of an object, substituting another object for the current object (Borrow Method Technique)
+  call: Calls a method of an object, substituting the this object (Borrow Method Technique)
     p.e: john.presentation.call(emily, 'friendly', 'afternoon');
 
   apply: Calls the function, substituting the specified object for the this value of the function, and the 
