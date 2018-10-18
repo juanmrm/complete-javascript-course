@@ -16,8 +16,8 @@ Design and coding resources page: http://codingheroes.io/resources/
       String: una secuencia de caracteres
       Number: siempre son en coma flotante, no como en Java 
       Boolean: true / false 
-      Undefined: data type de una variable que no tiene todavia valor asignado.
-      Null: 
+      Undefined: means a variable has been declared but has not yet been assigned a value
+      Null:  is an assignment value. It can be assigned to a variable as a representation of no value
 
 4 - Type Coercion / Variable Mutation
   Type Coercion: se llama asi a la conversión automatica de tipos que realiza Javascript.
@@ -57,7 +57,7 @@ Design and coding resources page: http://codingheroes.io/resources/
   }
 
 9 - Statements vs expressions
-  Los Statements realizan una accion / operacion sin producir un valor de output inmediato
+  Los statements realizan una accion / operacion sin producir un valor de output inmediato
   Las expressions si que generan un valor inmediato de salida.
 
     // Function Statements
@@ -80,7 +80,7 @@ Design and coding resources page: http://codingheroes.io/resources/
       - indexOf: devuelve la posición del primer elemento coincidente con el parametro que le pasamos
                  o -1 sino lo encuentra.
       - map: para realizar una transformacion sobre cada elemento y devolver un nuevo array del tipo que indicamos.
-      - splice: para eliminar elementos del array, indicando start position y numero de elemenmtos.
+      - splice: para eliminar elementos del array, indicando start position y numero de elementos.
     Propiedades tipicas:
       - length: numero de elementos del array.
 

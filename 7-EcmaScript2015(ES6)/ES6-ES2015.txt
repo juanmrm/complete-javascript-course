@@ -10,8 +10,9 @@ Browsers. Es muy útil usar un Transpiler ES6 -> ES5 como Babel.
   const: para constantes (variables inmutables), valores que no pueden cambiar.
 
   Diferencias: 
-    - var tiene scope function mientras que let y const tiene scope block (Function Scoped vs Block Scoped)
-    - una variable var se puede utilizar antes de ser declarada (hoisting), no vale con let y const.
+    - var tiene scope function mientras que let y const tiene scope block
+    - una variable var se puede utilizar antes de ser declarada (temporal dead zone and hoisting), no vale con let y const.
+    - podemos declarar la misma variable 2 veces pero no podemos hacerlo con let o const
 
 2 - Blocks and IIFEs (Data privacy)
 

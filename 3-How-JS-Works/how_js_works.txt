@@ -2,36 +2,37 @@
   Se trata del entorno / contexto de ejecución donde se almancenan nuestras variables y donde se ejecuta nuestro codigo.
   Global -> execution_context_global.png.
 
-     (CREATION FASE - STEP 1)
 2  - Execution Context in detail (execution_context_in_detail.png, execution_context_VO_creation_phase.png)
+
+3 - Creation Phase
+
+  - STEP 1 - Create Variable Object (VO) que contiene los parametros pasados, declaracion de variables y de funciones (functions declarations).
   
-  Contiene 3 propiedades:
-    - Variable Object (VO): contiene los parametros pasados, declaracion de variables y de funciones (functions declarations).
-    - Scope Chain: contiene las VO actuales y las VO's de todos sus padres.
-    - Determinar el valor de la variable "this".
+    Hoisting: variables y funciones estan disponibles durante la fase de ejecución.
+      Las funciones quedan totalmente definidas antes de que empiece la fase de ejecución (functions declarations)
+      Las variables se inicializan a undefined.
 
-  Hoisting: variables y funciones estan disponibles durante la fase de ejecución.
-    Las funciones quedan totalmente definidas antes de que empiece la fase de ejecución (functions declarations)
-    Las variables se inicializan a undefined.
+      IMPORTANTE: las functions expressions no se van a almancenar durante la fase de creacion por lo que si hacemos esto dara error:
+        
+        retirement(1956); // NO funciona, porque es una function expression, no una function declaration
 
-    IMPORTANTE: las functions expressions no se van a almancenar durante la fase de creacion por lo que si hacemos esto dara error:
+        var retirement = function(year) {
+          console.log(65 - (new Date().getFullYear() - year));
+        }
+
+  - STEP 2 - Define Scope Chain: contiene las VO actuales y las VO's de todos sus padres.
+
+      Scoping Chain (scoping_scope_chain.png, scope_chain-vs-execution_stack.png, scope-chain-example.png)
+
+      En Javascript la unica forma de crear un nuevo contexto (scope), es definir una nueva funcion. 
+      En otro lenguajes de programación se crean nuevos scopes con los if/else for/while...en Javascript no.
+  
+  - STEP 3 - Determining and setting value of 'THIS' keyword
+
+      Regular funtion call: this apunta al Global Object (the window object, in the browser)
       
-      retirement(1956); // NO funciona, porque es una function expression, no una declaration
+      Method call: this apunta al object sobre el que se esta invocando el metodo (function attached to an object)
 
-      var retirement = function(year) {
-        console.log(65 - (new Date().getFullYear() - year));
-      }
+2 - Execution Phase
 
-    (CREATION FASE - STEP 2)
-3 - Scoping Chain (scoping_scope_chain.png, scope_chain-vs-execution_stack.png, scope-chain-example.png)
-
-    En Javascript la unica forma de crear un nuevo contexto (scope), es definir una nueva funcion. 
-    En otro lenguajes de programación se crean nuevos scopes con los if/else for/while...en Javascript no.
-
-    (CREATION FASE - STEP 3)
-4 - Determining and setting value of 'THIS' keyword
-
-    Regular funtion call: this apunta al Global Object (the window object, in the browser)
-    
-    Method call: this apunta al object sobre el que se esta invocando el metodo
-    (function attached to an object)
+  The code of the function that generate the current execution context is run line by line

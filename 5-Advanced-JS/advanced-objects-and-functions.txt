@@ -16,14 +16,14 @@
 3 - Formas de crear objetos pensando siempre en herencia (ver script.js Function Constructor / Object Create):
   3.1 - Usando la funcion constructora (uso más popular), el nuevo objeto creado hereda del prototype. 
   3.2 - Object.create construye un objeto que hereda directamente del objeto que le estamos pasando como argumento.
-    p.e: Athlete5.prototype = Object.create(Person5.prototype); // Person5 es la clase padre de Athlete5 que es la subclase.
+    p.e: Athlete.prototype = Object.create(Person.prototype); // Person5 es la clase padre de Athlete5 que es la subclase.
 
 4 - Primitives vs Objects:
     numbers, string, boolean, undefined and null son primitivas / el resto son objetos (ver everything-is-an-object.png)
     
     Las variables que contienen primitivas contienen el valor del dato dentro de la variable directamente.
 
-    Una variable te tipo objeto no contiene el valor de los datos directamente sino una referencia / puntero a las posiciones en memoria de las variables que contiene el dato.
+    Una variable de tipo objeto no contiene el valor de los datos directamente sino una referencia / puntero a las posiciones en memoria de las variables que contiene el dato.
 
 5 - First Class Functions: Ver first-class-functions.png.
   - Passing Functions as Arguments: vamos a pasar una funcion como argumento, es una callback function, porque va a ser llamada después. 
@@ -36,13 +36,13 @@
   Con este patrón, no estamos creando un trozo de código reutilizable, pero es muy útil cuando queremos crear 
   un nuevo scope hidden from the outside scope (data privacy)
 
-  p.e: Tenemos que hacer que el Parser de Javascript lo interprete como expresión en vez de declaracion.
-       Por eso lo metemos dentro de parentesis. Ademas para ejecutar la funcion inmediatamente añadimos ()
+  Tenemos que hacer que el Parser de Javascript lo interprete como expresión en vez de declaracion.
+  Por eso lo metemos dentro de parentesis. Ademas para ejecutar la funcion inmediatamente añadimos ()
 
-      (function() {
-        var score = Math.random() * 10;
-        console.log(score >= 5);
-      })();
+    (function() {
+      var score = Math.random() * 10;
+      console.log(score >= 5);
+    })();
 
 7 - Closures (closures.png, how-closures-work.png)
 
@@ -57,8 +57,7 @@
   call: Calls a method of an object, substituting the this object (Borrow Method Technique)
     p.e: john.presentation.call(emily, 'friendly', 'afternoon');
 
-  apply: Calls the function, substituting the specified object for the this value of the function, and the 
-         specified array as the arguments of the function.
+  apply: Calls a method of an object, substituting the this object, and the specified array as the arguments of the function.
     p.e: john.presentation.apply(emily, ['friendly', 'afternoon']);
 
   bind: For a given function, creates a bound function that has the same body as the original function. 
@@ -68,6 +67,3 @@
         Con bind podemos crear una copia de una función que nos sirve para preestablecer argumentos (Currying Technique)
 
     p.e: var johnFriendly = john.presentation.bind(emily, 'friendly');
-
-
-

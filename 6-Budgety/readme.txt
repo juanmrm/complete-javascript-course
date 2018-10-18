@@ -35,4 +35,4 @@ Qué utilizamos en el projecto?
           la noción de que “muchas interfaces cliente específicas son mejores que una interfaz de propósito general”.
     D -> DIP Principio de inversión de la dependencia (Dependency inversion principle)
       La noción de que se debe “depender de abstracciones, no depender de implementaciones”.
-      La Inyección de Dependencias es uno de los métodos que siguen este principio.
+      La DI (Inyección de Dependencias) es uno de los métodos que siguen este principio.
