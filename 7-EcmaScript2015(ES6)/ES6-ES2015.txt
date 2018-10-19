@@ -121,17 +121,23 @@ Mas info en http://es6-features.org
     method1() {...}
   }
 
-  Podemos añadir static methods: son metodos que están vinculados a la clase, no a la instancia de la clase.
+  Tenemos disponible:
+    - inheritance
+        En ES5: Athlete5.prototype = Object.create(Person5.prototype); // Person5 es la clase padre de Athlete5 que es la subclase.
+        En ES6: class Athlete6 extends Person6 y en el constructor usaremos super(...)
+
+    - simple base class access
+        super.xxxx
+
+    - static methods
+        metodos que están vinculados a la clase, no a la instancia de la clase.
+
+    - getter / setter methods
 
   Consideraciones importantes:
     - Class definitions are not hoisted
     - Solo podemos añadir metodos a las clases, no propiedades.
     (Prototypes having data properties is generally considered an anti-pattern, so this just enforces a best practice.)
-
-12 - Classes with Subclasses:
-
-  En ES5: Athlete5.prototype = Object.create(Person5.prototype); // Person5 es la clase padre de Athlete5 que es la subclase.
-  En ES6: class Athlete6 extends Person6 y en el constructor usaremos super(...)
 
 13 - How to use ES2015 / ES6 Today
 
