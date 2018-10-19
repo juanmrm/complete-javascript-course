@@ -1,8 +1,7 @@
 ES2015 y ES6 se refieren a la misma versión de Javascript publicada en 2015.
 Se le llama también ES6 porque se ha lanzado después de la ES5 publicada en 2009.
 
-Actualmente no podemos utilizar ES6 en Producción, porque no está completamente soportada por los 
-Browsers. Es muy útil usar un Transpiler ES6 -> ES5 como Babel.
+Mas info en http://es6-features.org
 
 1 - Let and Const
 
@@ -76,9 +75,13 @@ Browsers. Es muy útil usar un Transpiler ES6 -> ES5 como Babel.
          en ES6: const sum = addFourAges(...ages);
                  const bigFamily = [...familySmith, 'Lily', ...familyMiller];
 
-8 - Rest Parameters in Functions: used in function declaration
+8 - Rest Operator
 
-  Nos permiten pasar un numero arbitrario de parametros a una funcion y utilizar estos argumentos en la funcion
+  En una statement usado junto con destructuring
+    const team = ['Juan', 'Pedro', 'Raul']
+    const [captain, ...players] = team
+
+  En una function nos permite pasar un numero arbitrario de parametros y utilizar estos argumentos en la funcion
    p.e: function isFullAge6(limit, ...years) {...}
 
 9 - Default Parameters
@@ -86,24 +89,26 @@ Browsers. Es muy útil usar un Transpiler ES6 -> ES5 como Babel.
   Cuando queremos que determinados argumentos de la funcion tengan valores por defecto.
     p.e:  function SmithPerson(firsName, yearOfBirth, lastName = 'Smith', nationality = 'american') {...}
 
-10 - Maps
+10 - Sets / Maps
 
   Nueva estructura de datos key-value de ES6.
-  La creamos con const map = new Map();
+  Crear let map = new Map();
   Añadimos: map.set(key, value), donde key puede ser string, number, boolean...
   Recuperar: map.get(key);
   Tamaño: map.size
-  Elimiar: map.delete(key)
+  Eliminar: map.delete(key)
   Comprobar si existe una clave: map.has(key)
   Eliminar todos los elementos: map.clear()
 
   Iteraremos con forEach o con forof loops
+    for (let [ key, val ] of m.entries())
+      console.log(key + " = " + val)
 
   Por qué un Map es mejor estructura de datos que un Object?
     - En un Map podemos utilizar cualquier cosa como key no solo Strings
     - Son Iterables
-    - Muy sencillo obtener el tamaño
-    - Muy facil añadir / eliminar elementos
+    - Sencillo obtener el tamaño
+    - Sencillo añadir / eliminar elementos
 
 11 - Classes:
 
@@ -118,7 +123,7 @@ Browsers. Es muy útil usar un Transpiler ES6 -> ES5 como Babel.
 
   Podemos añadir static methods: son metodos que están vinculados a la clase, no a la instancia de la clase.
 
-  2 Consideraciones importantes:
+  Consideraciones importantes:
     - Class definitions are not hoisted
     - Solo podemos añadir metodos a las clases, no propiedades.
     (Prototypes having data properties is generally considered an anti-pattern, so this just enforces a best practice.)
