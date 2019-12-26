@@ -46,12 +46,35 @@ Mas info en http://es6-features.org
 
     Lexical 'this' keyword: las arrow function comparten el this de la funcion que las envuelve.
 
-5 - Destructuring
+5 - De-structuring
+  - Siempre hay 2 partes implicadas en una destructuracion.
+    De-structuring fuente: parte derecha de la asignación =. Es la fuente te los valores que van a ser desestructurados.
+    De-structuring destino: parte izquierda de la asignación=. Es el patrón de la desestructuración.
 
-  Nos da una forma correcta de extraer datos de un Object o Array, más sencilla y corta de escribir.
-    p.e: const [name, age] = ['John', 26];
+    - Object de-structuring pattern: 
+        function buildAnimal({accessory = "", animal = "cat", color = 'rainbow', hairType = 'straight'} = {}){...}
+        let {address: {zipcode, street, number}} = person;
+        let {name = "default name"} = obj;
 
-  Es muy util para devolver multiples valores en una funcion. En ES5 lo que devolveriamos seria un Object.
+    - Array de-structuring pattern:
+      var arr = ["one", "two", "three", "four"];
+      var [first, second] = arr; //Only take first 2 elements
+      var [,,third, four] = arr; //Only take the last 2 elements
+      var [one, two, three, four] = arr //Extract all elements
+    
+    - Tambien funciona en cualquier otro objeto Iterable como Map, Set o String.
+      var [a, b] = new Set([1,2]); //a = 1, b = 2;
+      var [a, b] = new Map([[1,2], [2,3]]); //a= [1,2], b = [2,3]
+      var [x, y] = "xyz"; //x = "x", y = "y"
+
+    - Multiple variables declaration & initialization
+      let [a, b, c, d] = [2, 3, { id: 4 }, 5];
+
+    - Swapping
+      function swap(arr, i, j){
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+
 
 6 - Arrays
     Nuevos metodos y formas de iterar.
@@ -70,12 +93,37 @@ Mas info en http://es6-features.org
       - find
 
 7 - Spread operator: used in function call
-  Un manera muy conveniente de expandir los elementos de un array o lista en sitios como argumentos o llamadas a funciones.
+  - Un manera muy conveniente de expandir los elementos de un objeto iterable (p.e array) u objecto en sitios como argumentos o llamadas a funciones
     p.e: en ES5: var sum = addFourAges.apply(null, ages); // Llama a la funcion pasandole el array como argumento
          en ES6: const sum = addFourAges(...ages);
                  const bigFamily = [...familySmith, 'Lily', ...familyMiller];
 
+  - Clonar un objeto o Array (shallow clone version, only go one depth level)
+    En vez de let cloneObj = Object.assign({}, srcObj) -> let cloneObj = {...srcObj}
+    En vez de let cloneArr = srcArr.slice(0) o Array.from(srcArr) -> let cloneArr = [...srcArr]
+
+  - Convertir un objeto iterable a Array
+    Convertir un Set o Map a un array usando el Spread Operator
+    p.e: Remove duplicates from given array problem ?
+
+    const removeDuplicates = arr => {
+      const set = new Set(arr);
+      return [...set];
+    }
+
+  - Fusionar Arrays
+    Array.prototype.concat() devuelve un nuevo array donde se añaden los elementos del array adicional al final del array original sin modificar el array original
+      var arr3 = arr1.contcat(arr2)
+    
+    Array.prototype.unshift() devuelve un array donde se añaden los elementos del array adicional al principio del array original modificando el array original
+      Array.prototype.unshift.apply(arr1, arr2)
+
+    Spread Syntax
+      var arr3 = [...arr1, ...arr2]. Los arrays originales no se ven alterados
+
 8 - Rest Operator
+
+  Es una instancia de Array con lo que podemos utilizar sobre ella los metodos de Array.
 
   En una statement usado junto con destructuring
     const team = ['Juan', 'Pedro', 'Raul']
